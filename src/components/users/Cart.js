@@ -15,14 +15,14 @@ export default function Cart() {
   const handleSubmit = async() => {
     
     try {
-      let res =  await axios.post(`${env.apiUrl}/users/add-bill`,{
+      let res =  await axios.post(`${env.apiUrl}/add-bill`,{
         orderItems : context.cart,
         email : email ,
         orderAmount : total 
       }) 
       if(res.data.statusCode === 200) {
         context.setCart([])
-        navigate('/users/products')
+        navigate('/products')
       }
     }catch (error) {
       console.log(error)

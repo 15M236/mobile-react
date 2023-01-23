@@ -15,7 +15,7 @@ export default function CustomerDashBoard() {
  
   
   const listbills = useCallback( async() => {
-    let res =await axios.get(`${env.apiUrl}/users/get-bill/${email}`)
+    let res =await axios.get(`${env.apiUrl}/get-bill/${email}`)
     if(res.data.statusCode === 200 ){
       setBills(res.data.result)
       setCount(res.data.result.length)
@@ -29,7 +29,7 @@ export default function CustomerDashBoard() {
   },[listbills])
   return (
     <div>
-      <Button variant="primary" onClick={() => navigate('/users/products')} >Continue to purchase</Button>
+      <Button variant="primary" onClick={() => navigate('/products')} >Continue to purchase</Button>
       <p>Customer Dash Board</p>
         <p>Number of Bills Generated : {count}</p>          
         <Table striped bordered hover>

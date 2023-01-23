@@ -13,7 +13,7 @@ export default function AdminDashBoard() {
 
   const listBills = async() => {
     let token = sessionStorage.getItem('token');
-    let res =await axios.get(`${env.apiUrl}/users/get-bills`,{
+    let res =await axios.get(`${env.apiUrl}/get-bills`,{
       headers:{"Authorization":`Bearer ${token}`}
     })
     if(res.data.statusCode === 200 )
@@ -35,7 +35,7 @@ export default function AdminDashBoard() {
   return (
   <>
   <div>
-        <Button variant="primary" onClick={() => navigate('/users/products')} >List Products</Button>
+        <Button variant="primary" onClick={() => navigate('/products')} >List Products</Button>
         <p>Number of Bills Generated : {count}</p>          
         <Table striped bordered hover>
           <thead>

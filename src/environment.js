@@ -1,5 +1,5 @@
 const env = {
-    apiUrl:"https://capstone-fsd.onrender.com"
+    apiUrl:"http://localhost:4000"
 }
 
 export default env ;

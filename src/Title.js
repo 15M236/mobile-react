@@ -25,9 +25,10 @@ export default function Title() {
             <Nav className="me-auto">
             {!role && <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>}
             {!isSignIn && <Nav.Link onClick={() => navigate('/signin')}>SignUp</Nav.Link>}
-            <Nav.Link href='/cart'>Cart {context}</Nav.Link>
-            <Nav.Link >Dash Board</Nav.Link>
-            <Nav.Link onClick={handleLogOut}>Logout</Nav.Link>
+            <Nav.Link onClick={() => navigate('/cart')}>Cart {context.cart.length}</Nav.Link> 
+            {role === 'admin' ? <Nav.Link onClick={() => navigate('/adminDashboard')}>DashBoard</Nav.Link> :
+                  <Nav.Link onClick={() => navigate('/customerDashboard')}>DashBoard</Nav.Link>}
+            {role && <Nav.Link onClick={handleLogOut}>Logout</Nav.Link> }
             </Nav>
         </Container>
       </Navbar>

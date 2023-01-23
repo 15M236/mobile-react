@@ -30,12 +30,12 @@ export default function AddProduct(props) {
   console.log(token+"\n"+env.apiUrl)
   if(productId !== 0 || productName !=="" || price !== 0 || imageUrl !=="" ||  quantity !== 0) {
     if(productId) {
-      let result = await axios.put(`${env.apiUrl}/users/add-products/${productId}`,record,{
+      let result = await axios.put(`${env.apiUrl}/add-products/${productId}`,record,{
         headers:{"Authorization":`Bearer ${token}`}
       }).then(data => console.log(data))
       console.log(result)
     }else {
-      let result = await axios.post(`${env.apiUrl}/users/add-products`,record,{
+      let result = await axios.post(`${env.apiUrl}/add-products`,record,{
         headers:{"Authorization":`Bearer ${token}`}
       }).then(data => console.log(data))
       console.log(result)

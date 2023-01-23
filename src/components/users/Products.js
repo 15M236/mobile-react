@@ -21,7 +21,7 @@ export default function Products() {
   const listProducts = useCallback( async() =>{
     if(sessionStorage.getItem('token')) {
     let token = sessionStorage.getItem('token');
-    let res =await axios.get(`${env.apiUrl}/users/products`,{
+    let res =await axios.get(`${env.apiUrl}/products`,{
       headers:{"Authorization":`Bearer ${token}`}
     })
     if(res.data.statusCode === 200 )
@@ -51,7 +51,7 @@ export default function Products() {
 
   const handleDelete = async(id) => {
     console.log(id)
-    let res =await axios.delete(`${env.apiUrl}/users/delete/${id}`,{
+    let res =await axios.delete(`${env.apiUrl}/delete/${id}`,{
       headers:{"Authorization":`Bearer ${token}`}
     });
     console.log(res)
