@@ -43,3 +43,7 @@
 .table-row details {
   cursor: pointer;
 }
+
+.product-page , .dashboard-page{
+  margin-top: 5px;
+}

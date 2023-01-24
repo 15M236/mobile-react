@@ -14,7 +14,7 @@ export default function Products() {
   const navigate = useNavigate()
   let role = sessionStorage.getItem('role');
   let token = sessionStorage.getItem('token');
-  const img = "https://via.placeholder.com/150"
+  const img = "https://via.placeholder.com/200"
   const [visible , setVisible] = useState(false) 
   const [data , setData] = useState([])
 
@@ -40,6 +40,7 @@ export default function Products() {
         }, 2000)
       }
   },[navigate])
+
   useEffect(() => { 
       listProducts();
   },[listProducts])
@@ -64,7 +65,7 @@ export default function Products() {
     context.setCart(newArray);
   }
   return (
-    <div>
+    <div className='product-page'>
       <h1>{session}</h1>
       {role === "admin" && <Button variant="primary" onClick={() => navigate("/admin/add-product")}>Add Product</Button>}
       {products.map((product,i) => {

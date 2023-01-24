@@ -12,7 +12,7 @@ export default function CustomerDashBoard() {
   const[count , setCount] = useState(0)
   const[bills,setBills] = useState([])
   let navigate = useNavigate()
- 
+  const[session,setSession] = useState("Customer Dash Board")
   
   const listbills = useCallback( async() => {
     let res =await axios.get(`${env.apiUrl}/get-bill/${email}`)
@@ -25,12 +25,20 @@ export default function CustomerDashBoard() {
   },[email])
 
   useEffect(() => {
-    listbills()
-  },[listbills])
+    if(sessionStorage.getItem('token')){
+      listbills()
+    }
+    else {
+      setSession("Not logged in")
+        setTimeout(() => {
+          navigate('/login')
+        }, 2000)
+    }
+  },[listbills,navigate])
   return (
-    <div>
-      <Button variant="primary" onClick={() => navigate('/products')} >Continue to purchase</Button>
-      <p>Customer Dash Board</p>
+    <div className="dashboard-page">
+      <Button variant="primary" onClick={() => navigate('/products')}>Continue to purchase</Button>
+      <p>{session}</p>
         <p>Number of Bills Generated : {count}</p>          
         <Table striped bordered hover>
           <thead>
