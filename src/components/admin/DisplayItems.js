@@ -8,7 +8,7 @@ export default function DisplayItems(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <div>
+        <>
        <Button variant="primary" onClick={handleShow}>
         {props.value.billId}
       </Button>
@@ -31,7 +31,7 @@ export default function DisplayItems(props) {
           </Button>
         </Modal.Footer>
       </Modal>
-        </div>
+        </>
   )
 }
 

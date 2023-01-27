@@ -12,7 +12,7 @@ export default function SignUp() {
   const[name , setName] = useState('')
   const[number , setNumber] = useState('') 
   const navigate = useNavigate()
-  env.apiurl = "https://capstone-fsd.onrender.com"
+  env.apiurl = "https://mobile-node.onrender.com"
 
   const handleSignIn = async() => {
     let res = await axios.post(`${env.apiurl}/users/signup`,{

@@ -1,5 +1,5 @@
 const env = {
-    apiUrl:"http://localhost:4000"
+    apiUrl:"https://mobile-node.onrender.com"
 }
 
 export default env ;

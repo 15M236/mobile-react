@@ -14,7 +14,7 @@ export default function Login() {
   let [toggle,setToggle]=useState(false)
   let [message,setMessage]=useState("")
   let navigate = useNavigate()
-  env.apiurl = "https://capstone-fsd.onrender.com"
+  env.apiurl = "https://mobile-node.onrender.com"
 
   let handleLogin = async ()=>{
     setToggle(true)
@@ -52,7 +52,7 @@ export default function Login() {
   return (
     <>
     <div className="login-wrapper">
-      <p>Login to Continue</p>
+      <p>Login</p>
     </div>
     <div className='login-main-wrapper'>
       <Form>

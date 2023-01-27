@@ -1,5 +1,4 @@
 import React from 'react'
-
 import Form from 'react-bootstrap/Form';
 import {useState } from 'react'
 import { useParams , useNavigate } from 'react-router-dom'
@@ -27,21 +26,13 @@ export default function AddProduct(props) {
   setRecord({ ...record, [e.target.name]: e.target.value })
  }
  const handleSubmit = async() => {
-  console.log(token+"\n"+env.apiUrl)
+  // console.log(token+"\n"+env.apiUrl)
   if(productId !== 0 || productName !=="" || price !== 0 || imageUrl !=="" ||  quantity !== 0) {
-    if(productId) {
-      let result = await axios.put(`${env.apiUrl}/add-products/${productId}`,record,{
-        headers:{"Authorization":`Bearer ${token}`}
-      }).then(data => console.log(data))
-      console.log(result)
-    }else {
       let result = await axios.post(`${env.apiUrl}/add-products`,record,{
         headers:{"Authorization":`Bearer ${token}`}
       }).then(data => console.log(data))
       console.log(result)
-      navigate('/users/products')
-    }
-   
+      navigate('/products')  
   }else {
     alert("Enter all fields");
   }

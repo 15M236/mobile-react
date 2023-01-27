@@ -11,7 +11,7 @@ export default function Title() {
   const isSignIn = sessionStorage.getItem('isSignIn');
     const handleLogOut = () => {
         sessionStorage.clear();
-        // context.cart = ''
+        context.cart = ''
         navigate('/')
     }
         let navigate = useNavigate();  

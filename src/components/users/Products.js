@@ -52,10 +52,9 @@ export default function Products() {
 
   const handleDelete = async(id) => {
     console.log(id)
-    let res =await axios.delete(`${env.apiUrl}/delete/${id}`,{
+    await axios.delete(`${env.apiUrl}/delete/${id}`,{
       headers:{"Authorization":`Bearer ${token}`}
     });
-    console.log(res)
     listProducts();
   }
 
