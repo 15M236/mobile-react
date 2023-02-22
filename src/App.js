@@ -1,6 +1,6 @@
 import './App.css';
 import Title from './Title'
-import React , {useState} from 'react';
+import React , {useState , useEffect} from 'react';
 import {Routes , Route, BrowserRouter} from 'react-router-dom';
 import SignUp from './components/users/SignUp'
 import AddProduct from './components/admin/AddProduct'
@@ -12,6 +12,25 @@ import CustomerDashBoard from './components/users/CustomerDashBoard'
 export const CartContext = React.createContext();
 function App() {
   let [cart,setCart] = useState([])
+
+  useEffect(() => {
+    loadScript("https://checkout.razorpay.com/v1/checkout.js");
+  })
+
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.onload = () => {
+        resolve(true);
+      };
+      script.onerror = () => {
+        resolve(false);
+      };
+      document.body.appendChild(script);
+    });
+  };
+
   return (
     <div className="App">
       <CartContext.Provider value={{cart,setCart}}>
