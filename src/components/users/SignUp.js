@@ -31,35 +31,43 @@ export default function SignUp() {
   }
 
   return (
-    <div>
-      <div className='login-main-wrapper'>
-        <p>Create a new account</p>
-      <Form>
-      <Form.Group className="mb-3">
-          <Form.Label>Name</Form.Label>
-          <Form.Control type="text" placeholder="Enter Name" value={name} onChange={(e)=>setName(e.target.value)}/>
-        </Form.Group>
+    <>  
+      <section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style={{ borderRadius : "1rem" }}>
+          <div class="card-body p-5 text-center">
 
-        <Form.Group className="mb-3">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="text" placeholder="Enter Phone Number" value={number} onChange={(e)=>setNumber(e.target.value)}/>
-        </Form.Group>
+            <div class="mb-md-5 mt-md-4 pb-5">
 
-        <Form.Group className="mb-3">
-          <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-        </Form.Group>
+              <h2 class="fw-bold mb-2 text-uppercase">SIGN UP</h2>
+              <p class="text-white-50 mb-5">Please enter your details!</p>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-        </Form.Group>
+              <div class="form-outline form-white mb-4">
+              <Form.Control type="text" placeholder="Enter Name" value={name} onChange={(e)=>setName(e.target.value)}/>
+              </div>
 
-        <Button variant="primary" onClick={()=>handleSignIn()}>
-          Submit
-        </Button>
-      </Form>
+              <div class="form-outline form-white mb-4">
+              <Form.Control type="text" placeholder="Enter Phone Number" value={number} onChange={(e)=>setNumber(e.target.value)}/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+              <Form.Control type="email" placeholder="Enter email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+              <Form.Control type="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
+              </div>
+
+              <Button className='btn btn-outline-light btn-lg px-5' variant="outlined" onClick={()=>handleSignIn()}>Submit</Button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</section>
+    </>
   )
 }

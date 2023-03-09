@@ -19,7 +19,7 @@ export default function Title() {
 
   return (
     <div>
-      <Navbar bg="primary" variant="dark">
+      <Navbar className="gradient-custom" bg="primary" variant="dark">
         <Container>
             <Navbar.Brand href="/signin">Mobile FSD</Navbar.Brand>
             <Nav className="me-auto">

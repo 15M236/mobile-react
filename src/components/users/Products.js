@@ -80,7 +80,7 @@ export default function Products() {
                   {role === "customer" ? 
                   <> 
                   {product.quantity > 0 ? <Button onClick={()=>handleAddProduct(product)}>Add</Button> 
-                  : <Button disabled onClick={()=>handleAddProduct(product)}>Add</Button> }
+                  : <Button disabled onClick={()=>handleAddProduct(product)}>Buy</Button> }
                   </>: null
                   }
                   {role === "admin" ? 
